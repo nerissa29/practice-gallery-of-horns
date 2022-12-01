@@ -1,8 +1,19 @@
 import React from "react";
 import HornedBeasts from './components/HornedBeasts.js';
+import data from './components/data.json';
 
 class Main extends React.Component {
   render() {
+
+    let beasts = data.forEach(element => {
+      return <HornedBeasts
+        key={element._id}
+        title={element.title}
+        description={element.description}
+
+      />
+      
+    })
     return(
       <>
         <main>
