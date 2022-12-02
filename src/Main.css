@@ -1,0 +1,32 @@
+/* main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-bottom: 250px;
+} */
+
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-bottom: 250px;
+}
+
+.reactCard {
+  margin-bottom: 100px;
+  padding: 1px;
+  height: 550px;
+  margin-bottom: 20px;
+}
+
+.reactButton {
+  position: absolute;
+  bottom: 5%;
+}
