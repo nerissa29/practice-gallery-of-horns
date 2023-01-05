@@ -18,6 +18,14 @@ class HornedBeasts extends React.Component {
       clicked: this.state.clicked + '♥️'
     })
   }
+
+  clearVote = () => {
+    this.setState({
+      fave: 0,
+      clicked: ''
+    })
+  }
+  
   render() {
     return(
       <>
@@ -34,6 +42,7 @@ class HornedBeasts extends React.Component {
               <p>{this.state.clicked}</p>
             </Card.Text>
             <Button className='reactButton' variant="primary" onClick={this.handleHeart}>Favorite</Button>
+            <Button className='reactButtonClear' variant="primary" onClick={this.clearVote}>Clear</Button>
           </Card.Body>
         </Card>
         {/* </Row> */}

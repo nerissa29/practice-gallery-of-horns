@@ -30,3 +30,9 @@ main {
   position: absolute;
   bottom: 5%;
 }
+
+.reactButtonClear {
+  position: absolute;
+  bottom: 5%;
+  right: 4%
+}
