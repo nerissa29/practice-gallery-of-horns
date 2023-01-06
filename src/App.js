@@ -14,16 +14,16 @@ class App extends React.Component {
       title: '',
       description: '',
       selectedImg: {},
-      openModal: false,
-      closeModal: true
+      showModal: false,
     }
   }
 
   handleOpenModal = (image_url) => {
     const selectedBeast = data.find(beasts => beasts.image_url === image_url)
+    console.log(image_url)
 
     this.setState({
-      openModal: true,
+      showModal: true,
       selectedImg: selectedBeast.image_url,
       title: selectedBeast.title,
       description: selectedBeast.description
@@ -32,7 +32,7 @@ class App extends React.Component {
 
   handleCloseModal = () => {
     this.setState({
-      closeModal: false
+      showModal: false
     })
   }
 
@@ -45,7 +45,7 @@ class App extends React.Component {
           handleOpenModal = {this.handleOpenModal}
         />
         <SelectedBeast 
-          show = {this.state.openModal}
+          showModal = {this.state.showModal}
           title = {this.state.title}
           description = {this.state.description}
           selectedImg = {this.state.selectedImg}

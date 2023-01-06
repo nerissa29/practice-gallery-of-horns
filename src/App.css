@@ -2,7 +2,7 @@ body {
   background-color: rgb(191, 205, 230);
 } 
 
-img {
+.img-card {
   width: 250px;
   height: 250px;
 }
@@ -30,3 +30,10 @@ button:hover {
 button:active {
   transform: scale(1,1);
 }
+
+/* SelectedBeast component */
+.selImg {
+  width: 450px;
+  height: 450px;
+}
+
