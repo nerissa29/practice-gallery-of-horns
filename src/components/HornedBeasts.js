@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-// import Row from 'react-bootstrap/Row';
+import { Card } from 'react-bootstrap';
 
 class HornedBeasts extends React.Component {
   constructor(props) {
@@ -18,30 +17,39 @@ class HornedBeasts extends React.Component {
       clicked: this.state.clicked + '♥️'
     })
   }
+
+  handleImageClick = () => {
+    this.props.handleOpenModal(this.props.image_url)
+  }
+
+  clearVote = () => {
+    this.setState({
+      fave: 0,
+      clicked: ''
+    })
+  }
+  
   render() {
     return(
       <>
-        {/* <Row className="row" xs={1} sm={2} md={3} lg={4}> */}
-        <Card className='reactCard' style={{ width: '18rem' }}>
-          <Card.Img onClick={this.handleHeart} variant="top" src={this.props.image_url} />
-          <Card.Body>
-            <Card.Title>{this.props.title}</Card.Title>
-            <Card.Text>
-              <p>{this.props.description}</p>
-            </Card.Text>
-            <Card.Text>
-              <p>{this.state.fave} Votes</p>
-              <p>{this.state.clicked}</p>
-            </Card.Text>
-            <Button className='reactButton' variant="primary" onClick={this.handleHeart}>Favorite</Button>
-          </Card.Body>
-        </Card>
-        {/* </Row> */}
-
-        {/* from Lab 01 */}
-        {/* <h2>{this.props.title}</h2>
-        <img src={this.props.imageUrl} alt={this.props.title} title={this.props.title} />
-        <p>{this.props.description}</p> */}
+        {/* <Col> */}
+          <Card className='reactCard' style={{ width: '18rem' }}>
+            <Card.Img className='img-card' variant="top" onClick={this.handleImageClick} src={this.props.image_url} />
+            <Card.Body>
+              <Card.Title>{this.props.title}</Card.Title>
+              <Card.Text>
+                <p>{this.props.description}</p>
+              </Card.Text>
+              <Card.Text>
+                <p>{this.state.fave} Votes</p>
+                <p>{this.state.clicked}</p>
+              </Card.Text>
+              <Button className='reactButton' variant="primary" onClick={this.handleHeart}>Favorite</Button>
+              <Button className='reactButtonClear' variant="primary" onClick={this.clearVote}>Clear</Button>
+            </Card.Body>
+          </Card>
+        {/* </Col> */}
+       
       </>
     )
   }
